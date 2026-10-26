@@ -1,3 +1,4 @@
+const healthRouter = require('./routes/health');
 const express = require("express");
 const http = require("http");
 const cors = require("cors");
@@ -1102,3 +1103,5 @@ server.listen(
     )
 );
 
+
+app.use("/", healthRouter);
