@@ -1,3 +1,6 @@
+const { validateEnv } = require('./config/env');
+validateEnv();
+
 const express = require("express");
 const http = require("http");
 const cors = require("cors");
