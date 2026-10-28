@@ -1091,14 +1091,22 @@ app.post(
 // SERVER
 // ============================================================
 
-const PORT = process.env.PORT || 3000;
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
 
-server.listen(
-  PORT,
-  "0.0.0.0",
-  () =>
-    console.log(
-      `CollabCode backend running on port ${PORT}`
-    )
-);
+  server.listen(
+    PORT,
+    "0.0.0.0",
+    () =>
+      console.log(
+        `CollabCode backend running on port ${PORT}`
+      )
+  );
+}
+
+module.exports = {
+  app,
+  io,
+  server
+};
 
